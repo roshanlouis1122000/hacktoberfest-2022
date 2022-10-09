@@ -12,6 +12,7 @@ export default async ({response,request})=>{
         todos.push(newTodo)
 
         await Deno.writeFile(FILE_PATH,encoder.encode(JSON.stringify(todos)))
+        print("successfully logged in")
   
         response.status = 201
         response.body = { status:"success",newTodo }
